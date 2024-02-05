@@ -1,0 +1,5 @@
+RUN LOCALLY - cds watch:
+----------------------------------------------------------------------------------------
+rm association.sqlite
+cds deploy --to sqlite:association.sqlite
+cds watch

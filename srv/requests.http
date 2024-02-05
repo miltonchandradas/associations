@@ -1,0 +1,6 @@
+### GET Employees
+GET http://localhost:4004/odata/v4/service/demo/Employees?$expand=teams($expand=team)
+
+
+### GET Teams
+http://localhost:4004/odata/v4/service/demo/Teams?$expand=employees($expand=employee)
