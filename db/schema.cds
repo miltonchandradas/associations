@@ -10,8 +10,11 @@ entity Employees : cuid {
     address   : Association to Addresses;
     expenses  : Composition of many Expenses
                     on expenses.employee = $self;
-    teams     : Association to  many Teams_Employees
+    // teams     : Association to many Teams_Employees
+    //                 on teams.employee = $self;
+    teams     : Composition of many Teams.employees
                     on teams.employee = $self;
+
 }
 
 
@@ -34,10 +37,14 @@ entity Expenses : cuid {
 entity Teams : cuid {
     name        : String;
     description : String;
-    employees   : Association to many Teams_Employees on employees.team = $self; 
+
+    // employees   : Association to many Teams_Employees on employees.team = $self;
+    employees   : Composition of many {
+                      key employee : Association to Employees
+                  }
 }
 
-entity Teams_Employees {
-    key team     : Association to Teams;
-    key employee : Association to Employees;
-}
+// entity Teams_Employees {
+//     key team     : Association to Teams;
+//     key employee : Association to Employees;
+// }

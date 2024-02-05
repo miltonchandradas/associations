@@ -8,6 +8,6 @@ service DemoService {
     entity Expenses  as select from demo.Expenses;
     entity Teams     as select from demo.Teams;
 
-    entity Teams_Employees    as select from demo.Teams_Employees;
+// entity Teams_Employees    as select from demo.Teams_Employees;
 
 }
