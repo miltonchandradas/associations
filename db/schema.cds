@@ -15,4 +15,7 @@ entity Addresses : cuid {
     street : String @mandatory;
     city   : String @mandatory;
     state  : String @mandatory;
+// Uncomment if you want to get back to Employee from Address...
+// Note:  You also need to make sure the demo-Addresses.csv file has the proper values for employee_ID
+// employee : Association to Employees;
 }
